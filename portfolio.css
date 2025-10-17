@@ -158,23 +158,20 @@ header nav a:hover{ background: var(--ring); }
   color: var(--muted);
 }
 
-/* ---------- Projects: card list (mobile = horizontal snap; desktop = grid via Tailwind in HTML) ---------- */
-.room-f-c{ /* parent optional wrapper */
-  overflow: hidden;
-  display: grid;
-  gap: 1rem;
-}
+/* ---------- Projects: card list (mobile = horizontal snap; & grid via Tailwind in HTML) ---------- */
+
 
 /* Mobile carousel track */
-.room-cards{
-  display: grid;
-  gap: 1rem;
-  grid-auto-flow: column;
-  grid-auto-columns: 44%;
-  overflow-x: auto;
-  scroll-snap-type: x mandatory;
-  -webkit-overflow-scrolling: touch;
+.room-cards {
+  display: grid;                         /* Use CSS Grid layout to arrange child elements */
+  gap: 1rem;                             /* Add 1rem (16px) spacing between grid items */
+  grid-auto-flow: column;               /* Automatically place items in columns (horizontal flow) */
+  grid-auto-columns: 45%;               /* Each item gets 45% of the container’s width */
+  overflow-x: auto;                     /* Enable horizontal scrolling if content overflows */
+  scroll-snap-type: x mandatory;        /* Enable horizontal scroll snapping on the x-axis */
+  -webkit-overflow-scrolling: touch;    /* Smooth scrolling on iOS devices */
 }
+
 .room-cards > li{ scroll-snap-align: start; }
 
 /* Card shell */
@@ -184,8 +181,14 @@ header nav a:hover{ background: var(--ring); }
   overflow: hidden;
   box-shadow: var(--shadow);
   display: grid;
-  grid-template-rows: minmax(0, 1fr) auto;   /* media area + caption */
-  height: clamp(12rem, 28vw, 14rem);
+ grid-template-rows: minmax(0, 1fr) auto; /* Create two rows: 
+                                           - First row (media area) grows to fill space but can shrink to 0
+                                           - Second row (caption) sizes automatically to fit its content */
+
+height: clamp(12rem, 28vw, 14rem);       /* Set responsive height:
+                                           - Minimum: 12rem (192px)
+                                           - Preferred: 28% of viewport width
+                                           - Maximum: 14rem (224px) */
   transition: box-shadow 300ms, transform 300ms;
 }
 .room-cards article:hover{
@@ -198,11 +201,11 @@ header nav a:hover{ background: var(--ring); }
     overflow: hidden; 
 }
 
-/* Media inside card (support both images and videos) */
-.room-cards figure > img,
-.room-cards figure > video{
+
+
+.room-cards li figure > video{
   width: 100%;
-  height: 70%;
+  height: 65%;
   object-fit: cover;
   display: block;
   aspect-ratio: 4 / 3;
@@ -223,7 +226,12 @@ header nav a:hover{ background: var(--ring); }
   font-weight: 600;
   color: var(--text);
 }
-.room-cards figcaption{ padding:.65rem .8rem; color: var(--muted); }
+.room-cards figcaption{
+   padding:.65rem .8rem; 
+   color: var(--muted);
+   /* font-size: clamp(0.4rem, 2vw, 1rem); */
+
+   }
 /* ---------- Footer ---------- */
 footer{
   text-align: center;
@@ -246,7 +254,7 @@ footer{
     justify-self: end;
   }
 
-    /* .room-cards{
+    .room-cards{
     display: flex;
     gap: 1rem;
     list-style: none;
@@ -255,10 +263,10 @@ footer{
     overflow: visible;
     min-width: 0;
     flex: 1 1 0;
-  } */
+  }
   .room-cards{
     transform: translateX(50%);
-    transition: transform 500ms ease;
+    transition: transform 800ms ease;
   }
   .room-cards li{
     min-width: 0;
@@ -266,7 +274,7 @@ footer{
   }
   .room-cards:hover{
     transform: translateX(0%);
-    transition: transform 500ms ease;
+   
   }
   .about-highlights{
   display: grid;
@@ -281,34 +289,35 @@ footer{
 
 /* ---- Medium breakpoint: shrink Reddit Explorer video to give caption more room ---- */
 @media (min-width: 724px) and (max-width: 889px){
-    .room-cards{
-    display: flex;
-    gap: 1rem;
-    list-style: none;
-    padding: 0;
-    margin: 0;
-    overflow: visible;
-    transform: translateX(50%);
-    transition: transform 500ms ease;
-    scroll-snap-type: none;
-    min-width: 0;
-    flex: 1 1 0;
-  }
-  .room-cards li{
-    min-width: 0;
-    flex: 1 1 0;
-  }
-  .room-cards:hover{
-    transform: translateX(0%);
-  }
+    .room-cards {
+  display: flex;                  /* Arrange <li> items in a horizontal row using flexbox */
+  flex: 1 1 0;                    /* Allow the container to grow and shrink with no base width */
+  gap: 1rem;                      /* Add 1rem (16px) space between flex items */
+  list-style: none;              /* Remove default bullet points from <ul> */
+  padding: 0;                    /* Remove default padding from <ul> */
+  margin: 0;                     /* Remove default margin from <ul> */
+  overflow: visible;             /* Allow content to overflow outside the container */
+  transform: translateX(50%);    /* Shift the entire container 50% to the right */
+  transition: transform 500ms ease; /* Animate the transform smoothly over 500ms */
+  scroll-snap-type: none;        /* Disable scroll snapping behavior */
+  min-width: 0;                  /* Prevent overflow from flex children */
+}
 
-  /* Make the media box shorter so the caption has more space */
-  .room-cards li figure > video,
-  .room-cards li figure > img{
-    height: 55%;        /* was 70% */
-    aspect-ratio: auto; /* let height control the layout cleanly */
-    object-fit: cover;
-  }
+.room-cards li {
+  min-width: 0;                  /* Prevent child <li> from overflowing its container */
+  flex: 1 1 0;                   /* Allow each <li> to grow/shrink equally with no base width */
+}
+
+.room-cards:hover {
+  transform: translateX(0%);     /* On hover, slide the container back to its original position */
+}
+
+/* Make the media box shorter so the caption has more space */
+.room-cards li figure > video {
+  height: 55%;                   /* Reduce video height to 55% of its container it was 70 */
+  aspect-ratio: auto;            /* Let height determine layout instead of fixed aspect ratio */
+  object-fit: cover;             /* Crop and scale video to fill its container without distortion */
+}
     .about-highlights{
   display: grid;
   grid-template-columns: repeat(2 , 1fr);

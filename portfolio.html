@@ -70,20 +70,56 @@
       </div>
     </section>
 
-    <!-- 2) Projects showcase (min 3)-->
+    <!-- 1) Projects showcase (min 3)-->
    <section id="projects" aria-labelledby="projects-heading">
     <h2 id="projects-heading" class="text-center text-3xl font-bold my-6">Project Showcases</h2>
-    <ul class="room-cards grid gap-4 md:grid-cols-2 lg:grid-cols-3" role="list">
+  <ul class="room-cards grid gap-4 md:grid-cols-2 lg:grid-cols-3" role="list">
       <!-- Peek card -->
       <li class="peek">
         <article>
           <figure>
-            <figcaption>See each project live by click on it! →</figcaption>
+            <figcaption>See each project live or in GitHub click on it! →</figcaption>
           </figure>
         </article>
       </li>
+      <!-- Project 3: Responsive Hotel Page  -->
+      <li>
+        <article>
+          <figure>
+            <video autoplay muted playsinline loop poster="hero-poster.webp">
+              <source src="./assets/video/HotelFort.mp4" type="video/mp4" />
+            </video>
+            <figcaption>Responsive Luxury-Hotel— HTML/CSS</figcaption>
+          </figure>
 
-      <!-- Project 1: Jammming (entire card clickable) -->
+          <!-- Action row -->
+          <div class="flex flex-nowrap items-center justify-center gap-2 px-3 py-3">
+            <!-- Live Demo (primary) -->
+            <a
+              href="https://mah-davarfa.github.io/Hobby-Luxury-Hotel/"
+              target="_blank" rel="noopener noreferrer"
+              aria-label="Open live of Luxury-Hotel"
+              class="inline-flex items-center justify-center px-3 py-2 rounded-[10px]
+                    border border-[color:var(--ring)] text-[color:var(--text)] no-underline
+                    transition-colors duration-200 hover:bg-[var(--ring)]">
+              Live 
+            </a>
+
+            <!-- GitHub (ghost) -->
+            <a
+              href="https://github.com/mah-davarfa/Hobby-Luxury-Hotel.git"
+              target="_blank" rel="noopener noreferrer"
+              aria-label="View Luxury-Hotel source code on GitHub"
+              class="inline-flex items-center justify-center gap-2 px-3 py-2 rounded-[10px]
+                    border border-[color:var(--ring)] text-[color:var(--text)] no-underline
+                    transition-colors duration-200 hover:bg-[var(--ring)]">
+              <i class="fa-brands fa-github" aria-hidden="true"></i>
+              GitHub
+            </a>
+          </div>
+        </article>
+      </li>
+      <!-- Project 2: Jammming  -->
       <li>
         <article>
           <figure>
@@ -94,7 +130,7 @@
           </figure>
 
           <!-- Action row -->
-          <div class="flex flex-wrap items-center gap-2 px-3 py-3">
+          <div class="flex flex-nowrap items-center justify-center gap-2 px-3 py-3">
             <!-- Live Demo (primary) -->
             <a
               href="https://jammming-mahmoud.netlify.app/"
@@ -103,12 +139,12 @@
               class="inline-flex items-center justify-center px-3 py-2 rounded-[10px]
                     border border-[color:var(--ring)] text-[color:var(--text)] no-underline
                     transition-colors duration-200 hover:bg-[var(--ring)]">
-              Live Demo
+              Live 
             </a>
 
             <!-- GitHub (ghost) -->
             <a
-              href="https://github.com/mah-davarfa/portfolio-projects"
+              href="https://github.com/mah-davarfa/Jammming.git"
               target="_blank" rel="noopener noreferrer"
               aria-label="View Jammming source code on GitHub"
               class="inline-flex items-center justify-center gap-2 px-3 py-2 rounded-[10px]
@@ -123,46 +159,84 @@
 
 
 
-      <!-- Project 2: Reddit Explorer (entire card clickable) -->
+      <!-- Project 3: Reddit Explorer  -->
       <li>
-        <a href="https://reddit-client-mah.netlify.app/" target="_blank" rel="noopener noreferrer">
-          <article>
-            <figure>
-                    <video autoplay muted playsinline loop poster="hero-poster.webp">
-            <source src="./assets/video/Reddit-ap.mp4" type="video/mp4">
-          </video>
-              <figcaption>Reddit Explorer — React + Redux</figcaption>
-            </figure>
-          </article>
-        </a>
-      </li>
+        <article>
+          <figure>
+            <video autoplay muted playsinline loop poster="hero-poster.webp">
+              <source src="./assets/video/Reddit-ap.mp4" type="video/mp4" />
+            </video>
+            <figcaption>Reddit — React + Reddit API</figcaption>
+          </figure>
 
-      <!-- Project 3: Responsive Landing Page (entire card clickable) -->
-      <li>
-        <a href="https://mah-davarfa.github.io/Hobby-Luxury-Hotel/" target="_blank" rel="noopener noreferrer">
-          <article>
-            <figure>
-                    <video autoplay muted playsinline loop poster="hero-poster.webp">
-            <source src="./assets/video/HotelFort.mp4" type="video/mp4">
-          </video>
-              <figcaption>Responsive Landing Page — HTML/CSS</figcaption>
-            </figure>
-          </article>
-        </a>
-      </li>
+          <!-- Action row -->
+          <div class="flex flex-nowrap items-center justify-center gap-2 px-3 py-3">
+            <!-- Live Demo (primary) -->
+            <a
+              href="https://reddit-client-mah.netlify.app/"
+              target="_blank" rel="noopener noreferrer"
+              aria-label="Open live demo of reddit-client"
+              class="inline-flex items-center justify-center px-3 py-2 rounded-[10px]
+                    border border-[color:var(--ring)] text-[color:var(--text)] no-underline
+                    transition-colors duration-200 hover:bg-[var(--ring)]">
+              Live 
+            </a>
 
-      <!-- Project 4: Todo List (entire card clickable) -->
+            <!-- GitHub (ghost) -->
+            <a
+              href="https://github.com/mah-davarfa/reddit-client.git"
+              target="_blank" rel="noopener noreferrer"
+              aria-label="View reddit-client source code on GitHub"
+              class="inline-flex items-center justify-center gap-2 px-3 py-2 rounded-[10px]
+                    border border-[color:var(--ring)] text-[color:var(--text)] no-underline
+                    transition-colors duration-200 hover:bg-[var(--ring)]">
+              <i class="fa-brands fa-github" aria-hidden="true"></i>
+              GitHub
+            </a>
+          </div>
+        </article>
+      </li>
+      
+     
+
+
+      <!-- Project 4: Todo List  -->
+
       <li>
-        <a href="https://mah-davarfa.github.io/todo-list/" target="_blank" rel="noopener noreferrer">
-          <article>
-            <figure>
-                    <video autoplay muted playsinline loop poster="hero-poster.webp">
-            <source src="./assets/video/todo-app-functionality.mp4" type="video/mp4">
-          </video>
-              <figcaption>Todo List — Vanilla JS</figcaption>
-            </figure>
-          </article>
-        </a>
+        <article>
+          <figure>
+            <video autoplay muted playsinline loop poster="hero-poster.webp">
+              <source src="./assets/video/todo-app-functionality.mp4" type="video/mp4" />
+            </video>
+            <figcaption>Todo List — Vanilla JS(Boot-Camp)</figcaption>
+          </figure>
+
+          <!-- Action row -->
+          <div class="flex flex-nowrap items-center justify-center gap-2 px-3 py-3">
+            <!-- Live Demo (primary) -->
+            <a
+              href="https://mah-davarfa.github.io/todo-list/"
+              target="_blank" rel="noopener noreferrer"
+              aria-label="Open live of Todo List — Vanilla JS"
+              class="inline-flex items-center justify-center px-3 py-2 rounded-[10px]
+                    border border-[color:var(--ring)] text-[color:var(--text)] no-underline
+                    transition-colors duration-200 hover:bg-[var(--ring)]">
+              Live 
+            </a>
+
+            <!-- GitHub (ghost) -->
+            <a
+              href="https://github.com/mah-davarfa/todo-list.git"
+              target="_blank" rel="noopener noreferrer"
+              aria-label="View Todo List source code on GitHub"
+              class="inline-flex items-center justify-center gap-2 px-3 py-2 rounded-[10px]
+                    border border-[color:var(--ring)] text-[color:var(--text)] no-underline
+                    transition-colors duration-200 hover:bg-[var(--ring)]">
+              <i class="fa-brands fa-github" aria-hidden="true"></i>
+              GitHub
+            </a>
+          </div>
+        </article>
       </li>
     </ul>
   </section>
