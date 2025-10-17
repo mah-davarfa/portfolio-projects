@@ -88,7 +88,7 @@ header .site-branding h1{
   to   { opacity: 1; transform: translateY(0); }
 }
 
-#projects h2, #skills h2, #about-me h2, #contact h2 { 
+#projects h2, #skills h2, #about-me h2, #contact h2, #intro h2 { 
   animation: on-load 3000ms ease both; 
 }
 
@@ -170,7 +170,7 @@ header nav a:hover{ background: var(--ring); }
   display: grid;
   gap: 1rem;
   grid-auto-flow: column;
-  grid-auto-columns: 40%;
+  grid-auto-columns: 44%;
   overflow-x: auto;
   scroll-snap-type: x mandatory;
   -webkit-overflow-scrolling: touch;
@@ -246,18 +246,19 @@ footer{
     justify-self: end;
   }
 
-    .room-cards{
+    /* .room-cards{
     display: flex;
     gap: 1rem;
     list-style: none;
     padding: 0;
     margin: 0;
     overflow: visible;
-    transform: translateX(50%);
-    transition: transform 500ms ease;
-    scroll-snap-type: none;
     min-width: 0;
     flex: 1 1 0;
+  } */
+  .room-cards{
+    transform: translateX(50%);
+    transition: transform 500ms ease;
   }
   .room-cards li{
     min-width: 0;
@@ -265,6 +266,7 @@ footer{
   }
   .room-cards:hover{
     transform: translateX(0%);
+    transition: transform 500ms ease;
   }
   .about-highlights{
   display: grid;
